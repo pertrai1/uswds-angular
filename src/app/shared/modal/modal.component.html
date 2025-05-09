@@ -19,14 +19,14 @@
 
     <div class="usa-modal__content">
       <div class="usa-modal__main">
-        <div class="usa-modal__heading">
+        
           <ng-container *ngIf="headerTemplate(); else defaultHeader">
             <ng-container *ngTemplateOutlet="headerTemplate() ?? null"></ng-container>
           </ng-container>
           <ng-template #defaultHeader>
             <h2 class="usa-modal__heading" [id]="ariaLabelledBy()">Default Modal Title</h2>
           </ng-template>
-        </div>
+        
 
         <div class="usa-modal__body">
           <ng-container *ngIf="contentTemplate()">
