@@ -1,0 +1,93 @@
+<div class="grid-container">
+  <header class="usa-header usa-header--basic">
+    <div class="usa-nav-container">
+      <div class="usa-navbar">
+        <div class="usa-logo">
+          <em class="usa-logo__text">USWDS Modal Demo</em>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="usa-section">
+    <div class="grid-row grid-gap">
+      <div class="desktop:grid-col-8 usa-prose">
+        <h1>USWDS Modal Component Demo</h1>
+        <p class="usa-intro">
+          This demo showcases a reusable Angular USWDS Modal component with various configuration options.
+        </p>
+
+        <h2>Modal Examples</h2>
+
+        <div class="margin-top-3 margin-bottom-4">
+          <div class="usa-form">
+            <label class="usa-label" for="modal-size-select">Modal Size</label>
+            <select
+              class="usa-select"
+              id="modal-size-select"
+              name="modal-size"
+              [(ngModel)]="selectedSize">
+              <option value="small">Small</option>
+              <option value="medium">Medium</option>
+              <option value="large">Large</option>
+            </select>
+          </div>
+
+          <h3>Declarative Modal</h3>
+          <button class="usa-button" (click)="isModalOpen = true">
+            Open Declarative Modal
+          </button>
+
+          <h3>Programmatic Modal</h3>
+          <button class="usa-button usa-button--accent-cool" (click)="openModalProgrammatically()">
+            Open Programmatic Modal
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<app-modal
+  [open]="isModalOpen"
+  [size]="selectedSize"
+  (openChange)="isModalOpen = $event"
+  (beforeClose)="onBeforeClose()"
+  (afterOpen)="onAfterOpen()"
+  ariaLabelledBy="modal-heading"
+  ariaDescribedBy="modal-description">
+
+  <h2 appModalHeader id="modal-heading">
+    Declarative Modal Example
+  </h2>
+
+  <div appModalContent id="modal-description">
+    <p>This is an example of a modal that is created declaratively in the template.</p>
+    <p>You can customize the modal size, content, and behavior.</p>
+
+    <h3>Features</h3>
+    <ul>
+      <li>Fully accessible with ARIA attributes</li>
+      <li>Keyboard navigation and focus trapping</li>
+      <li>Customizable content areas</li>
+      <li>Smooth animations for a polished user experience</li>
+    </ul>
+
+    <div class="usa-form">
+      <label class="usa-label" for="modal-input">Sample Form Input</label>
+      <input class="usa-input" id="modal-input" type="text" />
+    </div>
+  </div>
+
+  <div appModalFooter>
+    <ul class="usa-button-group">
+      <li class="usa-button-group__item">
+        <button class="usa-button" (click)="isModalOpen = false">Save Changes</button>
+      </li>
+      <li class="usa-button-group__item">
+        <button class="usa-button usa-button--outline" (click)="isModalOpen = false">Cancel</button>
+      </li>
+    </ul>
+  </div>
+
+</app-modal>

@@ -1,0 +1,55 @@
+<div 
+  class="usa-modal-wrapper"
+  [class.is-visible]="open()">
+  
+  <div class="usa-modal-overlay" (click)="backdropClick($event)"></div>
+  
+  <div 
+    #modalElement
+    class="usa-modal"
+    [class.usa-modal--sm]="size() === 'small'"
+    [class.usa-modal--lg]="size() === 'large'"
+    [attr.id]="id()"
+    role="dialog"
+    aria-modal="true"
+    [attr.aria-labelledby]="ariaLabelledBy()"
+    [attr.aria-describedby]="ariaDescribedBy()"
+    appFocusTrap
+    [focusTrapEnabled]="open()">
+
+    <div class="usa-modal__content">
+      <div class="usa-modal__main">
+        <div class="usa-modal__header">
+          <ng-container *ngIf="headerTemplate(); else defaultHeader">
+            <ng-container *ngTemplateOutlet="headerTemplate() ?? null"></ng-container>
+          </ng-container>
+          <ng-template #defaultHeader>
+            <h2 class="usa-modal__heading" [id]="ariaLabelledBy()">Default Modal Title</h2>
+          </ng-template>
+        </div>
+
+        <div class="usa-modal__body">
+          <ng-container *ngIf="contentTemplate()">
+            <ng-container *ngTemplateOutlet="contentTemplate() ?? null"></ng-container>
+          </ng-container>
+        </div>
+
+        <div *ngIf="footerTemplate()" class="usa-modal__footer">
+          <ng-container *ngTemplateOutlet="footerTemplate() ?? null"></ng-container>
+        </div>
+      </div>
+      <button
+        *ngIf="showCloseButton()"
+        type="button"
+        class="usa-button usa-modal__close"
+        aria-label="Close this window"
+        (click)="closeModal()"
+        data-close-modal
+      >
+        <svg class="usa-icon" aria-hidden="true" focusable="false" role="img">
+          <use href="/assets/img/sprite.svg#close"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>

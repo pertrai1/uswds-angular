@@ -1,0 +1,26 @@
+/* Add application styles & imports to this file! */
+@import '@uswds/uswds/css/uswds.min.css';
+
+:root {
+  --modal-z-index: 1000;
+  --modal-overlay-bg: rgba(0, 0, 0, 0.6);
+  --animation-duration: 0.3s;
+}
+
+body {
+  font-family: 'Source Sans Pro', 'Helvetica Neue', 'Helvetica', 'Roboto', 'Arial', sans-serif;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+.usa-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}

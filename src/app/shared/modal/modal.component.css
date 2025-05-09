@@ -1,0 +1,57 @@
+:host {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: none;
+}
+
+:host(.is-visible) {
+  display: block;
+}
+
+.usa-modal-wrapper {
+  position: fixed;
+  inset: 0;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.usa-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+.usa-modal {
+  position: relative;
+  background: white;
+  margin: auto;
+  width: 100%;
+  max-width: 30rem;
+  transform: translateY(-1.5rem);
+  transition: transform 0.2s ease-in-out;
+}
+
+.usa-modal--lg {
+  max-width: 50rem;
+}
+
+.usa-modal--sm {
+  max-width: 20rem;
+}
+
+.usa-modal-wrapper.is-visible .usa-modal {
+  transform: translateY(0);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
