@@ -22,7 +22,7 @@ export class ModalContentDirective implements OnInit {
 
   private applyUswdsBodyClass(): void {
     this.renderer.addClass(this.el.nativeElement, 'usa-modal__body');
-    this.renderer.addClass(this.el.nativeElement, 'usa-prose'); // Optional: USWDS typography
+    this.renderer.addClass(this.el.nativeElement, 'usa-prose');
   }
 
   private applyScrollConstraints(): void {
