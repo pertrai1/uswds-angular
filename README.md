@@ -1,1 +1,1 @@
-uswds-modal-component
+# USWDS Angular Components
