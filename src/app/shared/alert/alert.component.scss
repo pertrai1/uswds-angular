@@ -1,0 +1,14 @@
+/* USWDS Alert Component Styles */
+
+/* No additional styles needed as we're using USWDS classes */
+/* The component will inherit all USWDS alert styles through the usa-alert classes */
+
+.usa-alert {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.btn-close {
+  margin: 1rem;
+}

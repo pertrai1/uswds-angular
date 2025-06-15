@@ -1,0 +1,37 @@
+<div
+  class="usa-alert"
+  [class]="'usa-alert--' + type()"
+  [class.usa-alert--slim]="isSlim()"
+  [class.usa-alert--no-icon]="isNoIcon()"
+  role="alert"
+  [attr.aria-live]="type() === 'emergency' ? 'assertive' : 'polite'"
+>
+  <div class="usa-alert__body">
+    @if (heading()) {
+    <h3 class="usa-alert__heading">{{ heading() }}</h3>
+    }
+    <div class="usa-alert__text">
+      <ng-content></ng-content>
+    </div>
+  </div>
+  @if (isDismissible()) {
+  <button
+    class="usa-button usa-button--unstyled btn-close"
+    (click)="dismiss()"
+    [attr.aria-label]="'Close this ' + type() + ' alert'"
+  >
+    <svg
+      class="usa-alert__icon"
+      aria-hidden="true"
+      focusable="false"
+      width="16"
+      height="16"
+    >
+      <path
+        fill="#000000"
+        d="M15.707 15.707a1 1 0 0 1-1.414 0L8 9.414 2.707 15.707a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 1 1 1.414-1.414L8 6.586l5.293-5.293a1 1 0 0 1 1.414 1.414L9.414 8l5.293 5.293z"
+      ></path>
+    </svg>
+  </button>
+  }
+</div>

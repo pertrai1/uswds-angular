@@ -14,8 +14,19 @@
       <div class="desktop:grid-col-8 usa-prose">
         <h1>USWDS Modal Component Demo</h1>
         <p class="usa-intro">
-          This demo showcases a reusable Angular USWDS Modal component with various configuration options.
+          This demo showcases a reusable Angular USWDS Modal component with
+          various configuration options.
         </p>
+
+        <app-alert
+          type="info"
+          *ngIf="isInfoAlertVisible"
+          heading="Info Alert"
+          [isDismissible]="true"
+          (dismissed)="alertDismissed()"
+        >
+          <p>This is an info alert.</p>
+        </app-alert>
 
         <h2>Modal Examples</h2>
 
@@ -26,7 +37,8 @@
               class="usa-select"
               id="modal-size-select"
               name="modal-size"
-              [(ngModel)]="selectedSize">
+              [(ngModel)]="selectedSize"
+            >
               <option value="small">Small</option>
               <option value="medium">Medium</option>
               <option value="large">Large</option>
@@ -39,7 +51,10 @@
           </button>
 
           <h3>Programmatic Modal</h3>
-          <button class="usa-button usa-button--accent-cool" (click)="openModalProgrammatically()">
+          <button
+            class="usa-button usa-button--accent-cool"
+            (click)="openModalProgrammatically()"
+          >
             Open Programmatic Modal
           </button>
         </div>
@@ -55,14 +70,15 @@
   (beforeClose)="onBeforeClose()"
   (afterOpen)="onAfterOpen()"
   ariaLabelledBy="modal-heading"
-  ariaDescribedBy="modal-description">
-
-  <h2 appModalHeader id="modal-heading">
-    Declarative Modal Example
-  </h2>
+  ariaDescribedBy="modal-description"
+>
+  <h2 appModalHeader id="modal-heading">Declarative Modal Example</h2>
 
   <div appModalContent id="modal-description">
-    <p>This is an example of a modal that is created declaratively in the template.</p>
+    <p>
+      This is an example of a modal that is created declaratively in the
+      template.
+    </p>
     <p>You can customize the modal size, content, and behavior.</p>
 
     <h3>Features</h3>
@@ -82,12 +98,18 @@
   <div appModalFooter>
     <ul class="usa-button-group">
       <li class="usa-button-group__item">
-        <button class="usa-button" (click)="isModalOpen = false">Save Changes</button>
+        <button class="usa-button" (click)="isModalOpen = false">
+          Save Changes
+        </button>
       </li>
       <li class="usa-button-group__item">
-        <button class="usa-button usa-button--outline" (click)="isModalOpen = false">Cancel</button>
+        <button
+          class="usa-button usa-button--outline"
+          (click)="isModalOpen = false"
+        >
+          Cancel
+        </button>
       </li>
     </ul>
   </div>
-
 </app-modal>
