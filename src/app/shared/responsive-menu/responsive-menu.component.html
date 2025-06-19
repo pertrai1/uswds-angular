@@ -1,0 +1,44 @@
+<nav class="menu" role="navigation" aria-label="Main menu">
+  <ul #menuList id="menuList" role="menubar">
+    <ng-container *ngFor="let item of items()">
+      <li role="none">
+        <a
+          class="usa-link"
+          role="menuitem"
+          tabindex="0"
+          [routerLink]="item.route"
+          [attr.aria-label]="item.label"
+        >
+          {{ item.label }}
+        </a>
+      </li>
+    </ng-container>
+    <li #moreMenu id="moreMenu" class="more hidden" role="none">
+      <button
+        id="moreButton"
+        class="usa-button usa-button--unstyled"
+        popovertarget="moreDropdown"
+        popovertargetaction="toggle"
+        role="menuitem"
+        aria-haspopup="true"
+        aria-expanded="false"
+        aria-controls="moreDropdown"
+        aria-label="More menu items"
+      >
+        More
+        <svg class="usa-icon" aria-hidden="true" focusable="false" role="img">
+          <use href="sprite.svg#arrow_drop_down"></use>
+        </svg>
+      </button>
+      <ul
+        #moreDropdown
+        id="moreDropdown"
+        popover
+        anchor="moreButton"
+        role="menu"
+        class="dropdown-popover"
+        aria-label="Overflow menu"
+      ></ul>
+    </li>
+  </ul>
+</nav>

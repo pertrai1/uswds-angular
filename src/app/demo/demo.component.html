@@ -3,13 +3,18 @@
     <div class="usa-nav-container">
       <div class="usa-navbar">
         <div class="usa-logo">
-          <em class="usa-logo__text">USWDS Modal Demo</em>
+          <em class="usa-logo__text">USWDS Demos</em>
         </div>
       </div>
     </div>
   </header>
 
   <main class="usa-section">
+    <div class="grid-row grid-gap">
+      <div class="desktop:grid-col-12 margin-bottom-4">
+        <responsive-menu [items]="menuItems" />
+      </div>
+    </div>
     <div class="grid-row grid-gap">
       <div class="desktop:grid-col-8 usa-prose">
         <h1>USWDS Modal Component Demo</h1>

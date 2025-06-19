@@ -7,6 +7,7 @@ import { ModalContentDirective } from "../shared/modal/modal-content.directive";
 import { ModalFooterDirective } from "../shared/modal/modal-footer.directive";
 import { ModalService } from "../shared/modal/modal.service";
 import { AlertComponent } from "../shared/alert/alert.component";
+import { ResponsiveMenuComponent } from "../shared/responsive-menu/responsive-menu.component";
 
 @Component({
   selector: "app-demo",
@@ -18,6 +19,7 @@ import { AlertComponent } from "../shared/alert/alert.component";
     ModalHeaderDirective,
     ModalContentDirective,
     ModalFooterDirective,
+    ResponsiveMenuComponent,
     AlertComponent,
   ],
   templateUrl: "./demo.component.html",
@@ -28,6 +30,16 @@ export class DemoComponent {
   isProgrammaticModalOpen = false;
   selectedSize: "small" | "medium" | "large" = "medium";
   isInfoAlertVisible = true;
+
+  menuItems = [
+    { label: "Home", route: "/" },
+    { label: "About", route: "/about" },
+    { label: "Services", route: "/services" },
+    { label: "Portfolio", route: "/portfolio" },
+    { label: "Blog", route: "/blog" },
+    { label: "Careers", route: "/careers" },
+    { label: "Contact", route: "/contact" },
+  ];
 
   constructor(private modalService: ModalService) {}
 
