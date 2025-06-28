@@ -11,18 +11,14 @@ import { CommonModule } from "@angular/common";
       (drop)="onDrop($event)"
       (dragover)="onDragOver($event)"
     >
-      <div class="file-input-demo-content">
-        <div class="usa-file-input usa-file-input--large">
-          <input
-            id="file-input-multiple"
-            class="usa-file-input"
-            type="file"
-            name="file-input-multiple"
-            aria-describedby="file-input-multiple-hint"
-            multiple="multiple"
-          />
-        </div>
-      </div>
+      <input
+        id="file-input-multiple"
+        class="usa-file-input"
+        type="file"
+        name="file-input-multiple"
+        aria-describedby="file-input-multiple-hint"
+        multiple="multiple"
+      />
     </div>
   `,
   styles: [
