@@ -39,24 +39,8 @@ import { CommonModule } from "@angular/common";
         border-color: #0071bc;
       }
 
-      .file-input-demo-content {
-        width: 100%;
-        max-width: 600px;
-        text-align: center;
-      }
-
       .usa-file-input {
         width: 100%;
-      }
-
-      .usa-file-input__button {
-        padding: 1rem;
-        font-size: 1.25rem;
-      }
-
-      .usa-file-input__label {
-        display: block;
-        margin: 0;
       }
     `,
   ],
