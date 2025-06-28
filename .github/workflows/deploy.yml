@@ -17,5 +17,5 @@ jobs:
       - run: npm run build --configuration=production --base-href=/
       - uses: peaceiris/actions-gh-pages@v3
         with:
-          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           publish_dir: ./dist/demo

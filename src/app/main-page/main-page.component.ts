@@ -16,6 +16,11 @@ import { RouterModule } from '@angular/router';
               <span class="usa-link__text">Demo Component</span>
             </a>
           </li>
+          <li>
+            <a routerLink="/file-input-demo" class="usa-link">
+              <span class="usa-link__text">File Input Demo</span>
+            </a>
+          </li>
         </ul>
       </div>
     </div>
