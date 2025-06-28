@@ -18,6 +18,9 @@ jobs:
       - uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          publish_dir: ./dist/demo
+          publish_dir: ./dist/demo/browser
           publish_branch: gh-pages
           force_orphan: true
+          keep_history: false
+          clean: true
+          commit_message: 'Deploy to GitHub Pages'
