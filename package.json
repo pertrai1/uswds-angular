@@ -5,7 +5,9 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "dev": "ng serve"
+    "dev": "ng serve",
+    "deploy": "ng build --prod && npx angular-cli-ghpages",
+    "deploy:dev": "ng build --prod && npx angular-cli-ghpages"
   },
   "dependencies": {
     "@angular/animations": "^19.2.0",
@@ -24,6 +26,7 @@
     "@angular/build": "^19.2.0",
     "@angular/cli": "^19.2.0",
     "@angular/compiler-cli": "^19.2.0",
+    "angular-cli-ghpages": "^2.0.0",
     "typescript": "^5.8.2"
   }
 }

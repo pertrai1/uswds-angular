@@ -1,25 +1,25 @@
 import { Component, importProvidersFrom } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { DemoComponent } from './app/demo/demo.component';
-import { provideRouter, Routes } from '@angular/router';
+import { MainPageComponent } from './app/main-page/main-page.component';
+import { provideRouter } from '@angular/router';
+import { routes } from './app/app.routes';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-
-const routes: Routes = [
-  { path: '', component: DemoComponent },
-  { path: '**', redirectTo: '' }
-];
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [DemoComponent],
-  template: `<app-demo></app-demo>`
+  imports: [CommonModule, RouterModule, FormsModule],
+  template: `<router-outlet></router-outlet>`
 })
 export class App {}
 
 bootstrapApplication(App, {
   providers: [
-    provideRouter(routes),
-    importProvidersFrom(FormsModule)
+    importProvidersFrom(FormsModule),
+    provideRouter(routes)
   ]
-});
+})
+.catch((err) => console.error(err));
