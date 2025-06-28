@@ -14,8 +14,10 @@ jobs:
         with:
           node-version: '20'
       - run: npm ci
-      - run: npm run build --configuration=production --base-href=/
+      - run: npm run build --configuration=production --base-href=/uswds-angular/
       - uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           publish_dir: ./dist/demo
+          publish_branch: gh-pages
+          force_orphan: true
