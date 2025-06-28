@@ -11,21 +11,28 @@ import { CommonModule } from "@angular/common";
       (drop)="onDrop($event)"
       (dragover)="onDragOver($event)"
     >
-      <input
-        id="file-input-multiple"
-        class="usa-file-input"
-        type="file"
-        name="file-input-multiple"
-        aria-describedby="file-input-multiple-hint"
-        multiple="multiple"
-      />
+      <div class="usa-file-input usa-file-input--large">
+        <input
+          id="file-input-multiple"
+          class="usa-file-input__input"
+          type="file"
+          name="file-input-multiple"
+          aria-describedby="file-input-multiple-hint"
+          multiple="multiple"
+        />
+        <label class="usa-file-input__label" for="file-input-multiple">
+          <span class="usa-file-input__button"
+            >Choose images or drop folder</span
+          >
+        </label>
+      </div>
     </div>
   `,
   styles: [
     `
       .file-input-demo-container {
         margin: 2rem;
-        min-height: calc(100vh - 4rem);
+        min-height: 200px;
         display: flex;
         justify-content: center;
         align-items: center;
