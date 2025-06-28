@@ -6,8 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "dev": "ng serve",
-    "deploy": "ng build --prod && npx angular-cli-ghpages",
-    "deploy:dev": "ng build --prod && npx angular-cli-ghpages"
+    "deploy": "ng build --configuration=production && npx angular-cli-ghpages",
+    "deploy:dev": "ng build --configuration=production && npx angular-cli-ghpages"
   },
   "dependencies": {
     "@angular/animations": "^19.2.0",

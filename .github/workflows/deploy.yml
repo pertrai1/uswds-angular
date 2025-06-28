@@ -14,8 +14,8 @@ jobs:
         with:
           node-version: '20'
       - run: npm ci
-      - run: npm run build -- --prod
+      - run: npm run build --configuration=production --base-href=/
       - uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: ./dist/demo
